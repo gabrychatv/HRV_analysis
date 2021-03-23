@@ -14,7 +14,7 @@ from scipy import signal
 from scipy.interpolate import interp1d
 
 #read data
-data = pd.read_csv('signals/ok/1.txt', header=None)[0]
+data = pd.read_csv('signals/ok/1.txt', header=None)[0] #add path where you saved your file
 time = np.cumsum(data/1000/60)
 
 #plot tachogram
