@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from hrvanalysis import get_frequency_domain_features, get_time_domain_features
+from pyentrp import entropy as ent
 
 import pyhrv
 import pyhrv.time_domain as td
@@ -23,9 +23,6 @@ plt.title('Tachogram')
 plt.xlabel('Time [min]')
 plt.ylabel('RR Intervals [ms]')
 plt.show()
-
-#plotting tachogram using pyhrv library
-pyhrv.tools.tachogram(data)
 
 #plot Poincare
 plt.plot(data[0:len(data)-1], data[1:len(data)], 'r.', markersize=4)
