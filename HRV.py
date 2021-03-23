@@ -14,7 +14,7 @@ from scipy import signal
 from scipy.interpolate import interp1d
 
 #read data
-data = pd.read_csv('signals/ok/1.txt', header=None)[0] #add path where you saved your file
+data = pd.read_csv('ok/1.txt', header = None)[0] #add path where you saved your file
 time = np.cumsum(data/1000/60)
 
 #plot tachogram
@@ -90,7 +90,7 @@ def frequency_domain(rr, fs = 4):
 def non_linear(rr):
     #sample entropy
     sample_entropy = ent.sample_entropy(rr, 2, 0.2*np.std(rr))[-1]
-    print('Sample entropy: ' + str(round(sample_entropy, 5)))
+    print('Sample entropy: ' + str(round(sample_entropy, 3)))
 
     #multiscale entropy
     multiscale = ent.multiscale_entropy(rr.to_list(), 2, 0.2*np.std(rr), maxscale = int(20))
@@ -104,7 +104,6 @@ def non_linear(rr):
     plt.xlabel('Scale factor')
     plt.ylabel('Se')
     plt.show()
-    
 
 time_domain(data)
 frequency_domain(data)
